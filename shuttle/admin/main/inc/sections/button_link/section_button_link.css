@@ -7,6 +7,10 @@
 	0. GENERAL STYLING
 ---------------------------------------------------------------------------------------------------------- */
 
+[class*="control-section-shuttle-button-link"] .accordion-section-title:before,
+[class*="control-section-shuttle-button-link"] .accordion-section-title:after {
+	display: none !important;
+}
 [class*="control-section-shuttle-button-link"] .accordion-section-title:hover,
 [class*="control-section-shuttle-button-link"] .accordion-section-title:focus {
 	background-color: #fff !important;

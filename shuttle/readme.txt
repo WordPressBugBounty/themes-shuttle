@@ -1,8 +1,8 @@
 === Shuttle ===
 Contributors: shuttlethemes
-Version: 1.4.3
+Version: 1.5.0
 Requires at least: 5.0
-Tested up to: 6.3
+Tested up to: 6.7
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -105,6 +105,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.5.0
+- Fixed:   Customer options updated to ensure full compatibility with WordPress v6.7+.
 
 = 1.4.3 =
 - TGMPA notice dismissable now works correctly.
