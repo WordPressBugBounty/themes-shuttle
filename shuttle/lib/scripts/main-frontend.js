@@ -187,6 +187,42 @@ jQuery(document).ready(function(){
 
 
 // ----------------------------------------------------------------------------------
+//	RESPONSIVE MENU - TOGGLE DROPDOWN
+// ----------------------------------------------------------------------------------
+
+jQuery(document).ready(function (){
+
+	// Assign selector variables
+	const headernav_btn           = jQuery('#header-nav .btn-navbar');
+	const header_responsive_inner = jQuery('#header-responsive-inner');
+	const header_responsive_links = jQuery('#header-responsive .responsive-links');
+
+	// Open menu
+	headernav_btn.click(function(e){
+		header_responsive_links.toggleClass( 'nav-open' );
+	});
+
+	// Close menu when exiting using keyboard tab
+	header_responsive_inner.on('focusout', function (e) {
+
+		// Get tabbed element
+		const next = e.relatedTarget;
+
+		// Exit if invalid element
+		if( !next ) return;
+
+		// Do not close if tabbing back to toggle
+		if( headernav_btn.is(next) ) return;
+
+		// Close menu if tabbing out to main content area
+		if( ! header_responsive_inner.has(next).length ) {
+			headernav_btn.click();
+		}
+	});
+});
+
+
+// ----------------------------------------------------------------------------------
 //	RESPONSIVE MENU - TOGGLE SUB MENUS
 // ----------------------------------------------------------------------------------
 
@@ -259,7 +295,7 @@ jQuery(window).load(function(){
 					jQuery( 'body' ).addClass( 'header-sticky-active' );
 				} else {
 					jQuery( 'body' ).removeClass( 'header-sticky-active' );
-				}	
+				}
 			}
 		});
 	}
@@ -421,8 +457,8 @@ jQuery(window).load(function() {
 		jQuery( '.sc-carousel' ).each( function(i) {
 
 			// Don't run caroufredsel code if the following classes are present.
-			if ( jQuery( this ).hasClass( 'sc-postitem' ) || 
-				 jQuery( this ).hasClass( 'sc-featured' ) || 
+			if ( jQuery( this ).hasClass( 'sc-postitem' ) ||
+				 jQuery( this ).hasClass( 'sc-featured' ) ||
 				 jQuery( this ).hasClass( 'sc-image' ) ) {
 					return;
 			};
@@ -442,7 +478,7 @@ jQuery(window).load(function() {
 			if ( scroll == 0 || isNaN( scroll ) == true ) scroll = '1';
 			if ( speed == 0 ) speed = '500';
 			if ( effect == 0 ) {
-				effect = '"scroll"'; 
+				effect = '"scroll"';
 			} else {
 				effect = '"' + effect + '"';
 			}
@@ -467,7 +503,7 @@ jQuery(window).load(function() {
 				}
 			}
 
-				// Apply carousel code if needed				
+				// Apply carousel code if needed
 				if ( jQuery( this ).find( '#' + instanceID + '-inner' ).length ) {
 
 					jQuery( this ).find( '#' + instanceID + '-inner' ).carouFredSel({
@@ -488,18 +524,18 @@ jQuery(window).load(function() {
 						circular        : true,
 						infinite        : false,
 						auto 	        : false,
-						prev	: {	
+						prev	: {
 							button	: '#' + instanceID + ' .prev',
 							key		: 'left'
 						},
-						next	: { 
+						next	: {
 							button	: '#' + instanceID + ' .next',
 							key		: 'right'
 						},
 						pagination	: '#' + instanceID + ' .pagination',
 						onCreate: function () {
 							jQuery(window).bind("load resize", function() {
-							
+
 							// Set height to testimonial carousel elements - All
 							parentWidthTestimonial = jQuery( '#' + instanceID + '.carousel-testimonial li').outerHeight();
 							jQuery( '#' + instanceID + '.carousel-testimonial' ).height( 'auto' );
@@ -547,7 +583,7 @@ jQuery(window).load(function() {
 			// Set carousel container height
 			parentHeight = jQuery( '#' + instanceID + ' li').outerHeight();
 			jQuery( '#' + instanceID + ' li' ).each(function() {
-				var elementHeight = jQuery(this).height(); 
+				var elementHeight = jQuery(this).height();
 				parentHeight = elementHeight > parentHeight ? elementHeight : parentHeight;
 			});
 
@@ -595,9 +631,9 @@ jQuery(document).ready(function() {
 
 			// Collect slider parameter values
 			var wide = jQuery( element ).data( 'wide' );
-			
+
 			// Format row section for full-screen slider
-			if ( wide == 'on' ) {		
+			if ( wide == 'on' ) {
 				jQuery( element ).closest( '.panel-grid' ).css( 'padding', 0 );
 				jQuery( element ).closest( '.panel-grid-core' ).css( 'margin', 0 ).css( 'maxWidth', '100%' );
 				jQuery( element ).closest( '.panel-grid-cell' ).css( 'padding', 0 );
@@ -611,9 +647,9 @@ jQuery(document).ready(function() {
 
 			// Collect slider parameter values
 			var wide = jQuery( element ).data( 'wide' );
-			
+
 			// Format row section for full-screen slider
-			if ( wide == 'on' ) {		
+			if ( wide == 'on' ) {
 				jQuery( element ).closest( '.panel-grid' ).css( 'padding', 0 );
 				jQuery( element ).closest( '.panel-grid-core' ).css( 'margin', 0 ).css( 'maxWidth', '100%' );
 				jQuery( element ).closest( '.panel-grid-cell' ).css( 'padding', 0 );
@@ -625,9 +661,9 @@ jQuery(document).ready(function() {
 
 			// Collect slider parameter values
 			var wide = jQuery( element ).data( 'wide' );
-			
+
 			// Format row section for full-screen slider
-			if ( wide == 'on' ) {		
+			if ( wide == 'on' ) {
 				jQuery( element ).closest( '.panel-grid' ).css( 'padding', 0 );
 				jQuery( element ).closest( '.panel-grid-core' ).css( 'margin', 0 ).css( 'maxWidth', '100%' );
 				jQuery( element ).closest( '.panel-grid-cell' ).css( 'padding', 0 );
@@ -649,8 +685,8 @@ jQuery(document).ready(function() {
 			jQuery(this).delay( time ).queue(function(next){
 				jQuery(this).removeClass( 'anim-start-ltr' ).addClass( 'anim-end-ltr' );
 				jQuery(this).parent().removeAttr( 'title' );
-			});	
-		}, {	
+			});
+		}, {
 		offset: 'bottom-in-view'
 	});
 
@@ -661,7 +697,7 @@ jQuery(document).ready(function() {
 			jQuery(this).delay( time ).queue(function(next){
 				jQuery(this).removeClass( 'anim-start-rtl' ).addClass( 'anim-end-rtl' );
 				jQuery(this).parent().removeAttr( 'title' );
-			});	
+			});
 		}, {
 		offset: 'bottom-in-view'
 	});
@@ -673,7 +709,7 @@ jQuery(document).ready(function() {
 			jQuery(this).delay( time ).queue(function(next){
 				jQuery(this).removeClass( 'anim-start-btt' ).addClass( 'anim-end-btt' );
 				jQuery(this).parent().removeAttr( 'title' );
-			});	
+			});
 		}, {
 		offset: 'bottom-in-view'
 	});
@@ -713,16 +749,16 @@ jQuery(document).ready(function() {
 	jQuery('#header #header-search a').click(function() {
 		if ( ! jQuery( '#header #header-search' ).hasClass( 'active' ) ) {
 			jQuery( '#header #header-search' ).addClass( 'active' );
-		} else { 
-			jQuery( '#header #header-search' ).removeClass( 'active' );	
+		} else {
+			jQuery( '#header #header-search' ).removeClass( 'active' );
 		}
 	});
 
 	jQuery('#header-sticky #header-search a').click(function() {
 		if ( ! jQuery( '#header-sticky #header-search' ).hasClass( 'active' ) ) {
 			jQuery( '#header-sticky #header-search' ).addClass( 'active' );
-		} else { 
-			jQuery( '#header-sticky #header-search' ).removeClass( 'active' );	
+		} else {
+			jQuery( '#header-sticky #header-search' ).removeClass( 'active' );
 		}
 	});
 });
@@ -775,7 +811,7 @@ jQuery(document).ready(function (){
 
 	// Scroll To #shuttleslider-after
 	jQuery('.featured-icon a').click(function(e){
-		e.preventDefault(); 
+		e.preventDefault();
 		jQuery('html, body').animate( { scrollTop: jQuery( '#shuttleslider-after' ).offset().top },  1000 );
 	});
 });
@@ -788,8 +824,8 @@ jQuery(document).ready(function (){
 jQuery(document).ready(function (){
 
 	// Add active class to social sharing button
-	jQuery('.woo-share').click(function(e){ 
-	
+	jQuery('.woo-share').click(function(e){
+
 		if ( jQuery( this ).hasClass( 'active' ) ) {
 			jQuery( this ).removeClass( 'active' );
 			jQuery( this ).closest( '.woo-meta' ).find( '.woo-meta-social' ).removeClass( 'active' );

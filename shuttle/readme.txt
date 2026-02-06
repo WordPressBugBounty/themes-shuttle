@@ -1,6 +1,6 @@
 === Shuttle ===
 Contributors: shuttlethemes
-Version: 1.5.0
+Version: 1.5.1
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6.0
@@ -105,6 +105,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.5.1
+- Fixed:   Improved accessibility for slider navigation.
+- Updated: Responsive header menu now closes when tabbing out to main content area.
 
 = 1.5.0
 - Fixed:   Customer options updated to ensure full compatibility with WordPress v6.7+.

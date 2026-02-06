@@ -1,7 +1,7 @@
 /*
 Theme Name:        Shuttle
 Text Domain:       shuttle
-Version:           1.5.0
+Version:           1.5.1
 Requires at least: 5.0
 Tested up to:      6.7
 Requires PHP:      5.6
@@ -2497,6 +2497,18 @@ a.themebutton2,
 .widget_tag_cloud a,
 .nav-links a {
 	text-decoration: none !important;
+}
+
+/* Add outline for slider navigation */
+#slider .rslides-inner a.rslides_nav.prev:focus {
+  left: 0px !important;
+}
+#slider .rslides-inner a.rslides_nav.next:focus {
+  right: 0px;
+}
+#slider .rslides-inner a.rslides_nav.prev:focus:before,
+#slider .rslides-inner a.rslides_nav.next:focus:before {
+   box-shadow: inset 0 0 0 1px #13aff0;
 }
 
 /* =Pre-Designed Homepage (code also in style-responsive.css)

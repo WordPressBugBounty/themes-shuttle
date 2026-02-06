@@ -22,6 +22,12 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 		 */
 		private $config;
 		/**
+		 * The current theme object.
+		 *
+		 * @var WP_Theme $theme The current theme.
+		 */
+		private $theme;
+		/**
 		 * Get the theme name using wp_get_theme.
 		 *
 		 * @var string $theme_name The theme name.
@@ -36,7 +42,7 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 		/**
 		 * Get the theme name using wp_get_theme.
 		 *
-		 * @var string $theme_name_slug The theme name.
+		 * @var string $theme_name_base The theme name.
 		 */
 		private $theme_name_base;
 		/**
@@ -45,12 +51,6 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 		 * @var string $theme_slug The theme slug.
 		 */
 		private $theme_slug;
-		/**
-		 * The current theme object.
-		 *
-		 * @var WP_Theme $theme The current theme.
-		 */
-		private $theme;
 		/**
 		 * Holds the theme version.
 		 *
@@ -174,17 +174,15 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 				$theme_name = ucfirst( trim( $theme_name ) );
 
 				// Appearance subpage
-				add_theme_page( 
-					$this->menu_name, 
-					$this->page_name, 
-					'activate_plugins', 
+				add_theme_page(
+					$this->menu_name,
+					$this->page_name,
+					'activate_plugins',
 					'/admin.php?page=shuttle-setup'
 				);
 
 				// Menu page
 				add_menu_page( 'Shuttle Setup', $theme_name . ' Theme', 'activate_plugins', 'shuttle-setup', '', get_template_directory_uri() . '/admin/main-toolbox/assets/img/icon.png' );
-//				add_menu_page( 'My Page Title', 'Why ' . $theme_name .'?', 'activate_plugins', 'shuttle-setup', '', get_template_directory_uri() . '/admin/main-toolbox/assets/img/icon.png' );
-//			    add_menu_page( 'My Page Title', $this->menu_name, 'activate_plugins', 'shuttle-setup', '', get_template_directory_uri() . '/admin/main-toolbox/assets/img/icon.png' );
 
 				// Menu subpages
 				add_submenu_page(
@@ -653,10 +651,10 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 
 			if (isset($_GET['shuttle-hide-notice']) && isset($_GET['_shuttle_notice_nonce'])) {
 				if (!wp_verify_nonce($_GET['_shuttle_notice_nonce'], 'shuttle_hide_notices_nonce')) {
-					wp_die(esc_html__('Action failed. Please refresh the page and retry.', strtolower( $theme_name )));
+					wp_die(esc_html__('Action failed. Please refresh the page and retry.', strtolower( $theme_slug )));
 				}
 				if (!current_user_can('edit_theme_options')) {
-					wp_die(esc_html__('You do not have the necessary permission to perform this action.', strtolower( $theme_name )));
+					wp_die(esc_html__('You do not have the necessary permission to perform this action.', strtolower( $theme_slug )));
 				}
 				update_option($theme_slug . '_shuttle_notice_welcome', 1);
 			}
