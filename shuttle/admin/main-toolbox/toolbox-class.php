@@ -631,11 +631,23 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 			}
 
 			// enqueue global js files
-			wp_enqueue_script( 'shuttle-global-js', ( get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend-global.js' ), array( 'jquery' ), '', 'true' );
+			wp_enqueue_script(
+				'shuttle-global-js',
+				get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend-global.js',
+				array( 'jquery' ),
+				$this->theme_version,
+				'true'
+			);
 
 			// enqueue js files
 			if ( strpos($hook_suffix, 'shuttle') !== false ) {
-				wp_enqueue_script( 'shuttle-page-js', ( get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend.js' ), array( 'jquery' ), '', 'true' );
+				wp_enqueue_script(
+					'shuttle-page-js',
+					get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend.js',
+					array( 'jquery' ),
+					$this->theme_version,
+					'true'
+				);
 			}
 		}
 

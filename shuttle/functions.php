@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['shuttle_theme_version'] = '1.5.1';
+$GLOBALS['shuttle_theme_version'] = '1.5.3';
 
 // Setup content width
 function shuttle_content_width() {

@@ -1,6 +1,6 @@
 === Shuttle ===
 Contributors: shuttlethemes
-Version: 1.5.1
+Version: 1.5.3
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6.0
@@ -105,6 +105,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.5.3
+- Updated: Theme version now used for toolbox js files.
+
+= 1.5.2
+- Fixed:   Shuttle docs sub-menu styling updated.
 
 = 1.5.1
 - Fixed:   Improved accessibility for slider navigation.

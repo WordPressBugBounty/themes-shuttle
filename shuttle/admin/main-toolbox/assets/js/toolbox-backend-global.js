@@ -7,7 +7,7 @@ jQuery(window).load(function() {
 	externalLink.attr('target', '_blank');
 
 	// Select upgrade link
-	var upgradeLink   = jQuery('#toplevel_page_shuttle-setup').find('a[href*="shuttlethemes.com/themes/"]');
+	var upgradeLink   = jQuery('#toplevel_page_shuttle-setup').find('a[href*="shuttlethemes.com"]');
 	var upgradeParent = upgradeLink.closest('li');
 
 	// Highlight upgrade link
