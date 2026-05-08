@@ -1,6 +1,6 @@
 === Shuttle ===
 Contributors: shuttlethemes
-Version: 1.5.3
+Version: 1.6.0
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6.0
@@ -105,6 +105,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.6.0
+- New:     User can now upsell from all customizer pages.
 
 = 1.5.3
 - Updated: Theme version now used for toolbox js files.

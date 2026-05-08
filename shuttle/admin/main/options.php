@@ -40,22 +40,6 @@ function shuttle_customizer_theme_options( $wp_customize ) {
 		)
 	);
 
-//	// Add Hire Section
-//	$wp_customize->add_section(
-//		new shuttle_customizer_customswitch_button_link(
-//			$wp_customize,
-//			'shuttle_customizer_section_docs',
-//			array(
-//				'title'        => __( 'Need help with your site?', 'shuttle' ),
-//				'priority'     => 1,
-//				'button_text'  => __( 'Hire a Developer', 'shuttle' ),
-//				'button_url'   => 'https://www.thinkupthemes.com/hire/',
-//				'button_class' => 'button-secondary',
-//				'panel'        => 'shuttle_customizer_section_themeoptions',
-//			)
-//		)
-//	);
-
 	// Add Documentation Section
 	$wp_customize->add_section(
 		new shuttle_customizer_customswitch_button_link(

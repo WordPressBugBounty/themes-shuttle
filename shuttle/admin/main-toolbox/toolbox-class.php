@@ -207,13 +207,6 @@ if ( ! class_exists( 'shuttle_toolbox_section' ) ) {
 				// 		'page_free_pro'
 				// 	)
 				// );
-//				add_submenu_page(
-//					'shuttle-setup',
-//					esc_html__( 'Hire a Developer', strtolower( $theme_name ) ),
-//					esc_html__( 'Hire a Developer', strtolower( $theme_name ) ),
-//					'activate_plugins',
-//					esc_url( 'https://www.thinkupthemes.com/hire/' )
-//				);
 				add_submenu_page(
 					'shuttle-setup',
 					esc_html__( 'Upgrade Now', strtolower( $theme_name ) ),
